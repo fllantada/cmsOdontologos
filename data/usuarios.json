@@ -1,0 +1,17 @@
+[
+  {
+    "user": "francisco",
+    "email": "fran@hotmail.com",
+    "message": "I'm a message"
+  },
+  {
+    "user": "pepe Lopez",
+    "email": "pepe2@hotmail.com",
+    "message": "segundo mensaje"
+  },
+  {
+    "user": "federico",
+    "email": "federico@homail.com",
+    "message": "tercer mensaje2"
+  }
+]
