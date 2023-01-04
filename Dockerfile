@@ -1,5 +1,5 @@
 FROM mongo:latest
-COPY start.sh .
+COPY setup.sh .
 RUN mkdir -p /data
 RUN chown -R mongodb:mongodb /data
 VOLUME /data
