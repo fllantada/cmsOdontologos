@@ -1,2 +1,3 @@
 #!/bin/bash
-mongod --bind_ip_all
+echo "Iniciando contenedor"
+docker start contenedor_mongo_docker
