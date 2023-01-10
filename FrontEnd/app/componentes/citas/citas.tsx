@@ -1,7 +1,6 @@
 "use client"
-
+import getCitas from '../../service/getCitas'
 import Alert from '@mui/material/Alert'
-import jsonData from './mocker_citas.json'
 
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
@@ -40,7 +39,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
  const Citas = () => {
 
- let citas = jsonData;
+ let   citas = getCitas();
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">

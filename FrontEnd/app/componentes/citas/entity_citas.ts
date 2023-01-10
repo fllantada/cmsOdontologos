@@ -1,16 +1,21 @@
 
 //citas
-export type Cita = {
-    id_cita: number,
-    fecha: Date,
-    horario_inicial: string,
-    horario_final:string,
-    paciente: Paciente,
-    doctor: Profesional,
-    estado_cita: Estado_cita,
-    situacion: Situacion,
+export type Cita = 
+    {
+        id_paciente: number,
+        nombre_paciente: string,
+        hora_inicio: string,
+        hora_fin: string,
+        duracion: number,
+        id_dentista: number,
+        nombre_dentista: string,
+        fecha: Date,
+        id_estado: number,
+        nombre_estado: string ,
+        id_situacion:number,
+        descripcion_situacion:string
+    }
 
-}
 //profesionales
 export type Profesional = {
     id_professional: number,
