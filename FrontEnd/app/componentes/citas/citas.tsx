@@ -38,14 +38,9 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 
-interface Props {
-  citas: typeof jsonData
-}
+ const Citas = () => {
 
-export default function Citas({ citas }: Props) {
-
-  citas = jsonData;
-  console.log(citas)
+ let citas = jsonData;
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -79,6 +74,9 @@ export default function Citas({ citas }: Props) {
     </TableContainer>
   );
 }
+
+
+export default Citas
 
 
 

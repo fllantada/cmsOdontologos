@@ -72,8 +72,9 @@ export default function SearchAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-           Dar+
+            Dar+
           </Typography>
+          
           <a href="/api/auth/logout"  >
             <h2 >
               logout
