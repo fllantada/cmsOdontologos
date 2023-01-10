@@ -9,7 +9,7 @@ export default function Home() {
 
     <div >
       {user && (<Citas />) }
- 
+ {console.log(user)}
     </div>
 
   )
