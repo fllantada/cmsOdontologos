@@ -1,7 +1,6 @@
 import { Document } from 'mongoose';
 export interface Dentista extends Document {
   id_sucursal: Number;
-  rut: String;
   nombre: String;
   apellidos: String;
   telefono: String;
@@ -13,12 +12,3 @@ export interface Dentista extends Document {
   ciudad: string;
   duracion_consulta: number;
 }
-
-
-
-
-
-
-
-
-
