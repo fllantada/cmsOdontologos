@@ -1,0 +1,78 @@
+{"dentistas" : [
+
+{
+    "id_sucursal": 1,
+    "rut": 1,
+    "nombre": "Pedro",
+    "apellidos": "Fernandez", 
+    "telefono": "2346404585",
+    "email": "pedrof@gmail.com",
+    "direccion": "Av. Santa Fe 3550",
+    "nombre_usuario": "PFernandez",
+    "password": "Hola",
+    "agenda_online": true,
+    "ciudad": "Capital Federal",
+    "duracion_consulta": 3
+},
+
+{
+    "id_sucursal": 2,
+    "rut": 2,
+    "nombre": "Martina",
+    "apellidos": "Perez", 
+    "telefono": "2346554585",
+    "email": "martip@gmail.com",
+    "direccion": "Guido 340",
+    "nombre_usuario": "MPerez",
+    "password": "Estrella",
+    "agenda_online": true,
+    "ciudad": "Capital Federal",
+    "duracion_consulta": 2
+},
+
+{
+    "id_sucursal": 3,
+    "rut": 3,
+    "nombre": "Martin",
+    "apellidos": "Lopez", 
+    "telefono": "1155404585",
+    "email": "mlopez@gmail.com",
+    "direccion": "Bidt 1470",
+    "nombre_usuario": "MLopez",
+    "password": "Chau",
+    "agenda_online": true,
+    "ciudad": "Capital Federal",
+    "duracion_consulta": 4
+},
+
+{
+    "id_sucursal": 4,
+    "rut": 4,
+    "nombre": "Belen",
+    "apellidos": "Lopardo", 
+    "telefono": "1150884585",
+    "email": "blop@gmail.com",
+    "direccion": "59 15",
+    "nombre_usuario": "BLopardo",
+    "password": "123456",
+    "agenda_online": true,
+    "ciudad": "La Plata",
+    "duracion_consulta": 3
+},
+
+{
+    "id_sucursal": 5,
+    "rut": 5,
+    "nombre": "Natalia",
+    "apellidos": "Facio", 
+    "telefono": "23455404585",
+    "email": "natfacio@gmail.com",
+    "direccion": "Lavalle 2471",
+    "nombre_usuario": "natfacio",
+    "password": "02345",
+    "agenda_online": true,
+    "ciudad": "Avellaneda",
+    "duracion_consulta": 1
+}
+]
+}
