@@ -9,7 +9,7 @@ export type Cita =
         duracion: number,
         id_dentista: number,
         nombre_dentista: string,
-        fecha: Date,
+        fecha:string,
         id_estado: number,
         nombre_estado: string ,
         id_situacion:number,

@@ -7,10 +7,11 @@ export default function Home() {
 
   return (
 
-    <div >
-      {user && (<Citas />) }
+    <>
+      {user && (<Citas
+      />) }
  {console.log(user)}
-    </div>
+    </>
 
   )
 }
