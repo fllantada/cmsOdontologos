@@ -64,8 +64,6 @@ export class DentistasService {
   async auth(nombre_usuario: string): Promise<Dentista | undefined> {
     try {
       const dentista = await this.dentistaModel.findOne({nombre_usuario});
-      console.log(dentista)
-  
       if(!dentista){
         throw new NotFoundException()
       }

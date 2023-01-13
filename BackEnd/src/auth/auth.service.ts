@@ -16,7 +16,7 @@ async validateUser(username: string, pass: string): Promise<any> {
 }
 
 async login(user: any) {
-    const payload = { nombre_usuario: user.nombre_usuario, _id: user._id };
+    const payload = { nombre_usuario: user._doc.nombre_usuario, _id: user._doc._id };
     return {
       access_token: this.jwtService.sign(payload),
     };
