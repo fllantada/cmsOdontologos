@@ -1,5 +1,5 @@
 "use client";
-import { Cita } from "../../navBar/citas/entity_citas";
+import { Cita } from "../domain/Cita.entity";
 import Alert from "@mui/material/Alert";
 
 const CardCita: React.FC<{ cita: Cita }> = ({ cita }) => {

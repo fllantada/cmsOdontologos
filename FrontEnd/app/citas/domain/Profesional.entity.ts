@@ -1,4 +1,4 @@
-import { Cita } from "../../componentes/citas/entity_citas";
+import { Cita } from "./Cita.entity";
 //profesionales
 export interface Profesional {
     id_professional: number;
