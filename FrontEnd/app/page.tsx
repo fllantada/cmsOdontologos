@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <>
-      {(user || 1) && <CitasScreen />}
+      {(user) && <CitasScreen />}
       {console.log(user)}
     </>
   );
