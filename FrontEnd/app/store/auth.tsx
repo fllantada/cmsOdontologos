@@ -1,19 +1,14 @@
-import create from "zustand";
+import { create } from "zustand";
 import { persist } from "zustand/middleware";
-
-export interface Profile {
-  name: string;
-  email: string;
-}
 
 type State = {
 
-  perfil: Profile;
+  perfil: string;
 
 };
 
 type Actions = {
-  setPerfil: (perfil: Profile) => void;
+  setPerfil: (perfil: string) => void;
 
 };
 
@@ -21,7 +16,7 @@ export const useAuthStore = create(
   persist<State & Actions>(
     (set) => ({
       perfil: '',
-      setPerfil: (perfil: Profile) => set((state) => ({ perfil })),
+      setPerfil: (perfil: string) => set((state) => ({ perfil })),
  
     }),
     {
