@@ -11,21 +11,20 @@ import { ConfigService } from './config/config.service';
 
 @Module({
   imports: [
+    // forRootAsync es una funcion asincrona que devuelve las opciones del modulo de mongoose y recibe como parametro el servicio de configuracion
     MongooseModule.forRootAsync({
+      // importo el modulo de configuracion para poder usar el servicio de configuracion en el modulo de mongoose
       imports: [ConfigModule],
+      // uso el servicio de configuracion para obtener la uri de la base de datos y crear las opciones del modulo de mongoose
       useFactory: async (configService: ConfigService) => {
+        // useFactory es una funcion asincrona que devuelve las opciones del modulo de mongoose y recibe como parametro el servicio de configuracion
         const options: MongooseModuleOptions = {
-          uri: configService.mongoUri,
-          useNewUrlParser: true,
-          useUnifiedTopology: true,
+          uri: configService.get('MONGO_URI')
         };
-        if (configService.mongoAuthEnabled) {
-          options.user = configService.mongoUser;
-          options.pass = configService.mongoPassword;
-        }
-
+        // devuelvo las opciones del modulo de mongoose para que las use el modulo de mongoose
         return options;
       },
+      // inyecto el servicio de configuracion en el modulo de mongoose para poder usarlo en el useFactory
       inject: [ConfigService],
     }),
   DentistasModule, PagosModule, CitasModule, AuthModule, ConfigModule],

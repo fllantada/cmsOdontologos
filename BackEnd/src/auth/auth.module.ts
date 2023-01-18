@@ -16,11 +16,11 @@ import { ConfigModule } from '../config/config.module';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => {
         const options: JwtModuleOptions = {
-          secret: configService.jwtSecret,
+          secret: configService.get('JWT_SECRET'),
         };
-        if (configService.jwtExpiresIn) {
+        if (configService.get("JWT_EXPIRES_IN")) {
           options.signOptions = {
-            expiresIn: configService.jwtExpiresIn,
+            expiresIn: configService.get("JWT_EXPIRES_IN"),
           };
         }
         return options;
