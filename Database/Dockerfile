@@ -5,4 +5,4 @@ RUN mkdir -p /data
 RUN chown -R mongodb:mongodb /data
 VOLUME /data
 #Comando que se va a ejecutar cada vez que corra el repositorio.
-CMD ["mongodb", "--bind_ip_all"]
+CMD ["mongodb", "setup.sh"]
