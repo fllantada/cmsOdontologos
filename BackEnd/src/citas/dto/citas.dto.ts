@@ -1,4 +1,4 @@
-export class CreateCitasDTO {
+export class CitasDto {
   readonly nombre_paciente: string;
   readonly hora_inicio: string;
   readonly hora_fin: string;
