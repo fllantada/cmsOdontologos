@@ -7,12 +7,12 @@ import Box from '@mui/material/Box';
 export const CitasScreen: React.FC = () => {
   let citas: Cita[] = getMockCitas();
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ margin:'10px', width: '95%' }}>
       <Grid container rowSpacing={2} columnSpacing={{ xs: 2, sm: 2, md: 3 }}>
-        {citas.map((cita: Cita) => {
+        {citas.map((cita: Cita ) => {
           return <CardCita cita={cita} />;
         })}
         </Grid>  
    </Box>
-  );
-};
+)
+      }
