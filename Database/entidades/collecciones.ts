@@ -1,67 +1,71 @@
 interface Usuario {
-  id_usuario: number;
+  _id: string; // Object Id de Mongo ver el type
   nombre: string;
   apellido: string;
-  dni: number;
-  email: string;
-  telefono: number;
-  direccion: string;
-  id_rol: number;
-  nombre_usuario: string;
+  email: string; //rol de ID tiene q ser unico
   password: string;
+  telefono: number;
+  rol: RolUsuario; // Object Id Mongo ver el type
 }
 
-interface RolUsuario {
-  id_rol: number;
-  rol: string;
-}
+type RolUsuario = "paciente" | "profesional" | "administrador";
 
 interface Profesional {
-  id_profesional: number;
-  id_usuario: number;
-  id_sucursal: number;
-  agenda_online: boolean;
-  duracion_consulta: number;
+  _id: string; // Object Id de Mongo ver el type
+  email: string;
   sucursales: Sucursal[];
-  citas: Cita[];
 }
 
 interface Sucursal {
-  id_sucursal: number;
+  _id: string; // Object Id de Mongo ver el type
   direccion: string;
   ciudad: string;
   provincia: string;
-  telefono: number;
-  email: string;
   profesionales: Profesional[];
 }
 
 interface Cita {
-  id_cita: number;
+  //objeto dinamico
+  _id: string; // Object Id de Mongo ver el type
+
+  //creacionales
   fecha: Date;
   hora: string;
-  id_usuario: number;     
-  id_profesional: number;
-  acciones: Accion[];
-  id_estado_cita: number;
+  paciente: number; //dni pacientes tienen dni unico
+  profesional: number;
+  //dinamicos
+
+  estado: EstadoCita;
+  estado_cuenta: EstadoCuenta;
+  acciones: Acciones[];
+  pagos: Pagos[];
 }
 
-interface EstadoCita{
-  id_estado_cita: number;
-  estado_cita: string;
-}
+type EstadoCuenta = "saldada" | "deuda" | "saldo a favor";
+type EstadoCita = "pendiente" | "confirmada" | "cancelada" | "finalizada";
+type MedioPago = "efectivo" | "tarjeta" | "transferencia" | "bonificacion";
 
+type Pagos = {
+  importe: number;
+  medio_pago: MedioPago;
+};
+
+type Acciones = {
+  prestacion: string;
+  precio: number;
+  importe_profesional: number;
+  importe_clinica: number;
+};
+
+//ValueObject
+/*
 interface Accion {
-  id_accion: number;
-  accion: string;
-  id_cita: number;
   prestacion: Prestacion[];
-  estado_cuenta: boolean;
-  id_pago: number;
 }
 
+//Entidad
 interface Prestacion {
-  id_prestacion: number;
+  _id: string; // Object Id de Mongo ver el type
   prestacion: string;
   id_accion: number;
   precio: number;
@@ -70,23 +74,12 @@ interface Prestacion {
 }
 
 interface Pago {
-  id_pago: number;
+  _id: string; // Object Id de Mongo ver el type
   id_cita: number;
   importe: number;
   id_medio_pago: number;
   fecha_recepcion: Date;
 }
 
-interface MedioPago {
-  id_medio_pago: number;
-  medio_pago: string;
-}
-
-interface Liquidacion {
-  id_liquidacion: number;
-  id_profesional: number;
-  fecha: Date;
-  acciones: Accion[];
-  pagos: Pago[];
-  importe: number;
-}
+type MedioPago = "efectivo" | "tarjeta" | "transferencia" | "bonificacion";
+ */

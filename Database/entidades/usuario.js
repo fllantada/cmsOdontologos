@@ -20,12 +20,12 @@ function crearUruarios(n) {
       nombre: faker.name.fullName(),
       apellido: faker.name.lastName(),
       dni: faker.finance.account(8),
-      email: faker.internet.email(),   
-      telefono: faker.phone.imei(),     
+      email: faker.internet.email(),
+      telefono: faker.phone.imei(),
       direccion: faker.address.buildingNumber(),
       id_rol: faker.finance.account(8),
       nombre_usuario: faker.internet.userName(),
-      password: faker.random.alpha(8),      
+      password: faker.random.alpha(8),
     });
   }
 
