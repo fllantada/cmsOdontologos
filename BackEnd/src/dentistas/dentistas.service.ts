@@ -61,17 +61,30 @@ export class DentistasService {
     return dentistaUpdated;
   }
 
-  async auth(nombre_usuario: string): Promise<Dentista | undefined> {
+  // async auth(nombre_usuario: string): Promise<Dentista | undefined> {
+  //   try {
+  //     const dentista = await this.dentistaModel.findOne({nombre_usuario});
+  //     if(!dentista){
+  //       throw new NotFoundException()
+  //     }
+  //     return dentista
+
+  //   } catch (error) {
+  //     return error
+  //   }
+  // }
+
+  async auth(email: string): Promise<Dentista | undefined> {
     try {
-      const dentista = await this.dentistaModel.findOne({nombre_usuario});
+      const dentista = await this.dentistaModel.findOne({email});
       if(!dentista){
-        throw new NotFoundException()
+        throw new NotFoundException('Theres no user with that email')
       }
       return dentista
 
     } catch (error) {
       return error
     }
-  }
+   }
 
 }
