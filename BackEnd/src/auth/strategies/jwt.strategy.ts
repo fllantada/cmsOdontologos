@@ -7,10 +7,14 @@ import { ConfigService } from '../../config/config.service';
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(configService: ConfigService) {
+    const JWT_SECRET = configService.get("JWT_SECRET");
+    if (!JWT_SECRET) {
+      throw new Error("No se encontro la variable de entorno JWT_SECRET en el archivo .env");
+    }
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: configService.get("JWT_SECRET"),
+      secretOrKey: JWT_SECRET,
     });
   }
 

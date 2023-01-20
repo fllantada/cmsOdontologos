@@ -16,12 +16,12 @@ import { CreateCitasDTO } from './dto/citas.dto';
 export class CitasController {
   constructor(private readonly citasService: CitasService) {}
 
-  @Get('/:dentistaID')
-  async getCitasDentista(
+  @Get('/:usuarioID')
+  async getCitasUsuario(
     @Res() res: any,
-    @Param('dentistaID') dentistaID: string,
+    @Param('usuarioID') usuarioID: string,
   ) {
-    const citas = await this.citasService.getCitasDentista(dentistaID);
+    const citas = await this.citasService.getCitasUsuario(usuarioID);
     return res.status(HttpStatus.OK).json(citas);
   }
   @Get('/c/:citaID')

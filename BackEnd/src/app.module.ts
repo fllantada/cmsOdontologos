@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { MongooseModule, MongooseModuleOptions } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DentistasModule } from './dentistas/dentistas.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
 import { PagosModule } from './pagos/pagos.module';
 import { CitasModule } from './citas/citas.module';
 import { AuthModule } from './auth/auth.module';
@@ -27,7 +27,7 @@ import { ConfigService } from './config/config.service';
       // inyecto el servicio de configuracion en el modulo de mongoose para poder usarlo en el useFactory
       inject: [ConfigService],
     }),
-  DentistasModule, PagosModule, CitasModule, AuthModule, ConfigModule],
+  UsuariosModule, PagosModule, CitasModule, AuthModule, ConfigModule],
   controllers: [AppController],
   providers: [AppService],
 })

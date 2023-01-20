@@ -3,7 +3,7 @@ export class CreateCitasDTO {
   readonly hora_inicio: string;
   readonly hora_fin: string;
   readonly duracion: number;
-  readonly id_dentista: string;
+  readonly id_usuario: string;
   readonly fecha: string;
   readonly id_estado: number;
   readonly nombre_estado: string;

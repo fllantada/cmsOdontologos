@@ -5,7 +5,7 @@ export const CitasSchema = new Schema({
   hora_inicio: { type: String, required: true },
   hora_fin: { type: String, required: true },
   duracion: { type: Number, required: true },
-  id_dentista: {
+  id_usuario: {
     type: Schema.Types.ObjectId,
     required: true,
   },

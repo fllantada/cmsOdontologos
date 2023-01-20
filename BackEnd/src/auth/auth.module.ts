@@ -1,4 +1,4 @@
-import { DentistasModule } from 'src/dentistas/dentistas.module';
+import { UsuariosModule } from 'src/usuarios/usuarios.module';
 import { forwardRef, Module } from '@nestjs/common';
 import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
@@ -10,24 +10,29 @@ import { ConfigModule } from '../config/config.module';
 
 @Module({
   imports: [
-    DentistasModule,
+    UsuariosModule,
     PassportModule,
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => {
+        const JWT_SECRET = configService.get("JWT_SECRET");
+        const JWT_EXPIRES_IN = configService.get("JWT_EXPIRES_IN");
+        if (!JWT_SECRET) {
+          throw new Error("No se encontro la variable de entorno JWT_SECRET en el archivo .env");
+        }
         const options: JwtModuleOptions = {
-          secret: configService.get('JWT_SECRET'),
+          secret: JWT_SECRET,
         };
-        if (configService.get("JWT_EXPIRES_IN")) {
+        if (JWT_EXPIRES_IN) {
           options.signOptions = {
-            expiresIn: configService.get("JWT_EXPIRES_IN"),
+            expiresIn: JWT_EXPIRES_IN,
           };
         }
         return options;
       },
       inject: [ConfigService],
     }),
-    forwardRef(() => DentistasModule),
+    forwardRef(() => UsuariosModule),
     ConfigModule,
   ],
   providers: [AuthService, LocalStrategy, JwtStrategy],

@@ -1,5 +1,5 @@
 import { Document } from 'mongoose';
-export interface Dentista extends Document {
+export interface Usuario extends Document {
   id_sucursal: Number;
   nombre: String;
   apellidos: String;

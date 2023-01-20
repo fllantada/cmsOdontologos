@@ -1,4 +1,4 @@
-export class CreateDentistaDTO {
+export class CreateUsuarioDTO {
   readonly id_sucursal: Number;
   readonly nombre: String;
   readonly apellidos: String;

@@ -17,17 +17,17 @@ export class CitasService {
     let Cita;
     if (citaID.match(/^[0-9a-fA-F]{24}$/)) {
        Cita = await this.citaModel.find({
-        id_dentista: citaID,
-       }).populate("id_dentista").exec();
+        id_usuario: citaID,
+       }).populate("id_usuario").exec();
     }
     if (!Cita) {
       throw new NotFoundException('Cita no encontrada');
     }
     return Cita;
   }
-  async getCitasDentista(dentistaID: string): Promise<Cita[]> {
+  async getCitasUsuario(usuarioID: string): Promise<Cita[]> {
     const Citas = await this.citaModel.find({
-      id_dentista: dentistaID,
+      id_usuario: usuarioID,
     });
     return Citas;
   }

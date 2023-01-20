@@ -4,7 +4,7 @@ export interface Cita extends Document {
   hora_inicio: string;
   hora_fin: string;
   duracion: number;
-  id_dentista: string;
+  id_usuario: string;
   fecha: string;
   id_estado: number;
   nombre_estado: string;
