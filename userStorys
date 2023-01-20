@@ -1,0 +1,18 @@
+## User Stories
+
+### Administrador
+
+- Como administrador, quiero poder agregar, editar y eliminar prestaciones en el sistema para poder actualizar las opciones disponibles para los pacientes.
+- Como administrador, quiero poder agregar, editar y eliminar sucursales, profesionales y usuarios en el sistema para poder controlar el acceso a las sucursales.
+- Como administrador, quiero poder ver un reporte de los pagos realizados por los profesionales para tener un control financiero
+- Como administrador, quiero poder agregar, editar y eliminar las acciones realizadas por los profesionales, asociándolas a las prestaciones correspondientes y ver un historial de las mismas.
+- Como administrador, quiero poder generar reportes financieros que incluyan la liquidación de cada profesional.
+
+### Profesional Médico
+
+- Como profesional médico, quiero poder ver una lista de mis citas programadas que vienen de un servicio externo llamado dentalink para poder planificar mi día.
+- Como profesional médico, quiero poder ingresar los pagos realizados por mis pacientes al sistema con el medio de pago correspondiente, y ver una lista de los mismos para poder tener un registro.
+- Como profesional médico, quiero poder ver un historial de las acciones realizadas en mis citas.
+- Como profesional médico, quiero poder ingresar acciones realizadas en una cita para poder tener un registro de las mismas.
+- Como profesional médico, quiero poder ingresar pagos realizados por pacientes a una cita para poder tener un registro de los mismos.
+- Como profesional médico, quiero poder ver una liquidación de mis ingresos basado en las acciones realizadas y los pagos registrados.
