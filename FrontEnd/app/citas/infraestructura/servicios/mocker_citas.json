@@ -37,7 +37,7 @@
             "id_dentista": 626,
             "nombre_dentista": "Pedro Gonzalez",
             "fecha": "08/01/2022",
-            "id_estado": 3,
+            "id_estado":3,
             "nombre_estado": "En consulta",
             "id_situacion":1,
             "descripcion_situacion":"Deudas"
@@ -51,7 +51,7 @@
             "id_dentista": 626,
             "nombre_dentista": "Pedro Gonzalez",
             "fecha": "08/01/2022",
-            "id_estado": 1,
+            "id_estado":1,
             "nombre_estado": "Atendido" ,
             "id_situacion":2,
             "descripcion_situacion":"Hay Saldo"
@@ -93,6 +93,7 @@
             "id_dentista": 626,
             "nombre_dentista": "Pedro Gonzalez",
             "fecha": "08/01/2022",
+            "id_estado": 4,
             "nombre_estado": "Confirmado por whatsapp",
             "id_situacion":4,
             "descripcion_situacion":"No hay Deuda"
@@ -106,6 +107,7 @@
             "id_dentista": 626,
             "nombre_dentista": "Pedro Gonzalez",
             "fecha": "08/01/2022",
+            "id_estado": 4,
             "nombre_estado": "Confirmado por whatsapp",
             "id_situacion":2,
             "descripcion_situacion":"Hay Saldo"
@@ -119,6 +121,7 @@
             "id_dentista": 626,
             "nombre_dentista": "Pedro Gonzalez",
             "fecha": "08/01/2022",
+            "id_estado": 4,
             "nombre_estado": "Confirmado por whatsapp",
             "id_situacion":2,
             "descripcion_situacion":"Hay Saldo"
@@ -132,6 +135,7 @@
             "id_dentista": 626,
             "nombre_dentista": "Pedro Gonzalez",
             "fecha": "08/01/2022",
+            "id_estado": 4,
             "nombre_estado": "Confirmado por whatsapp",
             "id_situacion":2,
             "descripcion_situacion":"Hay Saldo"
