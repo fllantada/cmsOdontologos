@@ -3,16 +3,20 @@ import { PassportStrategy } from '@nestjs/passport';
 import { Strategy } from 'passport-local';
 import { AuthService } from '../auth.service';
 import { JwtService } from '@nestjs/jwt';
+import { ExtractJwt } from 'passport-jwt';
 
 @Injectable()
 export class LocalStrategy extends PassportStrategy(Strategy) {
-  constructor(private readonly authService: AuthService, private readonly jwtService: JwtService) {
-    super();
+  constructor(private readonly jwtService: JwtService) {
+    super({
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+      ignoreExpiration: false,
+      secretOrKey: 'mariano',
+    });
   }
 
-  async validate(token: string): Promise<any> {
-    const user = this.jwtService.decode(token);
-    return user
+  async validate(payload: any) {
+    return { userId: payload.sub, username: payload.username };
   }
 
 }
