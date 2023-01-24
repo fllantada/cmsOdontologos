@@ -11,8 +11,11 @@ import {
 } from '@nestjs/common';
 import { CreateDentistaDTO } from './dto/dentistas.dto';
 import { DentistasService } from './dentistas.service';
+import { FrontEndAuthGuard } from '../auth/guards/front-end-auth.guard';
+import { UseGuards } from '@nestjs/common';
 
 @Controller('dentistas')
+@UseGuards(FrontEndAuthGuard)
 export class DentistasController {
   constructor(private dentistasService: DentistasService) {}
   @Post()

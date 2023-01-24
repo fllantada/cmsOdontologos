@@ -4,9 +4,10 @@ import { JwtModule, JwtModuleOptions } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategy';
-import { LocalStrategy } from './strategies/local.strategy';
+import { FrontEndStrategy } from './strategies/front-end.strategy';
 import { ConfigService } from '../config/config.service';
 import { ConfigModule } from '../config/config.module';
+import { AuthController } from './auth.controller';
 
 @Module({
   imports: [
@@ -30,7 +31,8 @@ import { ConfigModule } from '../config/config.module';
     forwardRef(() => DentistasModule),
     ConfigModule,
   ],
-  providers: [AuthService, LocalStrategy, JwtStrategy],
-  exports: [AuthService],
+  controllers: [AuthController],
+  providers: [AuthService, FrontEndStrategy, JwtStrategy],
+  exports: [AuthService, FrontEndStrategy],
 })
 export class AuthModule {}

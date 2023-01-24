@@ -8,6 +8,8 @@ import { CitasModule } from './citas/citas.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from './config/config.module';
 import { ConfigService } from './config/config.service';
+import { UseGuards } from '@nestjs/common/decorators';
+import { FrontEndAuthGuard } from './auth/guards/front-end-auth.guard';
 
 @Module({
   imports: [
