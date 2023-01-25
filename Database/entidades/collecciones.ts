@@ -1,3 +1,5 @@
+//ID de 12 bytes: 4 bytes marca de tiempo, 5 bytes valor ramdom y 3 bytes contador incremental.
+
 interface Usuario {
   _id: string; // Object Id de Mongo ver el type
   nombre: string;
@@ -31,10 +33,10 @@ interface Cita {
   //creacionales
   fecha: Date;
   hora: string;
-  paciente: number; //dni pacientes tienen dni unico
+  paciente: number; //dni paciente
   profesional: number;
-  //dinamicos
 
+  //dinamicos
   estado: EstadoCita;
   estado_cuenta: EstadoCuenta;
   acciones: Acciones[];
@@ -45,12 +47,12 @@ type EstadoCuenta = "saldada" | "deuda" | "saldo a favor";
 type EstadoCita = "pendiente" | "confirmada" | "cancelada" | "finalizada";
 type MedioPago = "efectivo" | "tarjeta" | "transferencia" | "bonificacion";
 
-type Pagos = {
+interface Pagos {
   importe: number;
   medio_pago: MedioPago;
 };
 
-type Acciones = {
+interface Acciones {
   prestacion: string;
   precio: number;
   importe_profesional: number;
